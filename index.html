@@ -3,70 +3,21 @@
 
 <head>
 	<title>firebase</title>
+
 	<!-- meta  -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<!-- script -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
 
-	<style>
-		/* default */
-		* {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			text-decoration: none;
-		}
-
-		body {
-			background-color: rgb(243, 243, 243);
-		}
-
-		.con {
-			width: 70%;
-			margin: auto;
-			position: relative;
-		}
-
-		header {
-			padding: 50px 0 30px 0;
-		}
-
-		header .con {
-			border-bottom: 1px solid black;
-		}
-
-		header h1 {
-			padding-bottom: 10px;
-		}
-
-		header p {
-			color: gray;
-			line-height: 1.5;
-			padding-bottom: 20px;
-		}
-
-		/* add style */
-		.list-post{
-			box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-			padding: 1rem;
-			margin-bottom: 1rem;
-		}
-
-		.list-post .title{
-			font-size: 1.3rem;
-			margin-bottom: .5rem;
-			text-transform: capitalize;
-		}
-
-		.list-post .text{
-			color: gray;
-		}
-
-
-	</style>
+	<!-- link -->
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
 	<header>
 		<div class="con">
@@ -77,101 +28,34 @@
 
 	<section>
 		<div class="con">
-
 			<form class="form-post">
-				<input type="text" placeholder="title" name="title">
-				<input type="text" placeholder="text" name="text">
-				<input type="submit">
+				<input class="title" type="text" placeholder="title" name="title">
+				<input class="text" type="text" placeholder="text" name="text">
+				<input class="btn-submit" type="submit">
 			</form>
 
 			<ul class="post">
 
 				<!-- post list -->
-				<li class="list-post">
+				<li class="list-post tamplate-js">
 					<h3 class="title">sample title</h3>
 					<p class="text">smaple text</p>
+
+					<div class="wrap-btn">
+						<p class="btn-edit-js">수정</p>
+						<p class="btn-delete-js">삭제</p>
+					</div>
 				</li>
 				
+
 			</ul>
 
 		</div>
 	</section>
 
 	<!-- script -->
-	<script>
-		const data = [
-			{
-				title: "text 01",
-				text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, suscipit!'	
-			},{
-				title: "text 02",
-				text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, suscipit!'	
-			},{
-				title: "text 03",
-				text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, suscipit!'	
-			},{
-				title: "text 04",
-				text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, suscipit!'	
-			}
-		]
-		const post = document.querySelector('.post');
-		const list_post = document.querySelector('.list-post');
-		const form = document.querySelector('.form-post');
-
-		function drawInitData() {
-			for(let i=0; i<data.length; i++){
-				// 복제
-				const tamplate = list_post.cloneNode(true);	
-
-				// title
-				const tamp_title = tamplate.querySelector('.title');
-				tamp_title.innerHTML = data[i].title;
-
-				// text
-				const tamp_text = tamplate.querySelector('.text');
-				tamp_text.innerHTML = data[i].text
-
-				// 집어넣기
-				post.appendChild(tamplate);
-			}
-
-			list_post.remove();
-		}
-
-		function formInit(){
-			form.addEventListener('submit', handleFormSubmit);
-		}
-
-		function handleFormSubmit(e) {
-			e.preventDefault();
-			addPost(form.title.value, form.text.value);
-		}
-
-		function addPost(title, text){
-			// 01. list-post 클래스를 가져와서
-			const post_temp = document.querySelector('.list-post');
-			// 02. 복사를 해서
-			const tamplate = post_temp.cloneNode(true);
-			// 03. title, text를 넣고
-			const tamp_title = tamplate.querySelector('.title');
-			tamp_title.innerHTML = title;
-			const tamp_text = tamplate.querySelector('.text');
-			tamp_text.innerHTML = text;
-			// 04. post 에 넣어라
-			post.prepend(tamplate);
-			// 05. form 의 title , text 비우기
-			form.title.value = "";
-			form.text.value = "";
-		}
-
-		function init() {
-			drawInitData();
-			formInit();
-		}
-
-		init();
-
-	</script>
+	<script src="js/firebase_config.js"></script>
+	<script src="js/index.js"></script>
 
 </body>
 

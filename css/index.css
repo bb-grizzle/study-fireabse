@@ -1,0 +1,74 @@
+/* add style */
+.list-post {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.list-post .title {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  text-transform: capitalize;
+  pointer-events: none;
+}
+
+.list-post .text {
+  color: gray;
+  pointer-events: none;
+}
+
+.list-post.tamplate-js {
+  display: none;
+}
+
+.list-post .wrap-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.list-post .wrap-btn p {
+  margin-left: 20px;
+  cursor: pointer;
+  opacity: .5;
+  -webkit-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+.list-post .wrap-btn p:hover {
+  opacity: 1;
+}
+
+.form-post {
+  margin-bottom: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-post .title, .form-post .text {
+  font-size: 1.2rem;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  margin-right: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  outline: none;
+  padding-left: 8px;
+  padding-bottom: 4px;
+}
+
+.form-post .btn-submit {
+  font-size: 1.2rem;
+  background-color: black;
+  color: white;
+  border-radius: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */

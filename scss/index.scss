@@ -1,0 +1,64 @@
+/* add style */
+.list-post {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+    pointer-events: none;
+  }
+
+  .text {
+    color: gray;
+    pointer-events: none;
+  }
+
+  &.tamplate-js{
+    display: none;
+  }
+
+  .wrap-btn{
+    display: flex;
+    flex-direction: row-reverse;
+    
+    p{
+      margin-left: 20px;
+      cursor: pointer;
+      opacity: .5;
+      transition: opacity .5s ease-in-out;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.form-post{
+  
+  margin-bottom: 32px;
+  display: flex;
+
+  .title, .text{
+    font-size: 1.2rem;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    outline: none;
+    padding-left: 8px;
+    padding-bottom: 4px;
+  }
+  .btn-submit{
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+}
